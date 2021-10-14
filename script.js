@@ -4,7 +4,7 @@ console.log('test');
 
 function computerPlay() {
   let randNum = Math.floor(Math.random() * 100);
-  console.log(randNum);
+  //console.log(randNum);
 
   if (randNum <= 33) {
     return computerSelection = 'rock';
@@ -17,7 +17,7 @@ function computerPlay() {
   }
 }
 
-console.log(computerPlay());
+//console.log(computerPlay());
 
 function playJankenRound(playerSelection, computerSelection) {
 
@@ -56,4 +56,12 @@ function playJankenRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playJankenRound('rock', 'rock'))
+//console.log(playJankenRound('rock', 'rock'))
+
+function game() {
+  for (var i = 0; i < 5; i++) {
+    console.log(playJankenRound(window.prompt('rock, paper, or scissors?'), computerPlay()))
+  }
+}
+
+game();
