@@ -24,24 +24,20 @@ btnPaper.addEventListener('click', () => console.log(playJankenRound('paper', co
 btnScissors.addEventListener('click', () => console.log(playJankenRound('scissors', computerPlay())));
 
 //GAME LOGIC
-console.log('test');
 
 function computerPlay() {
   let randNum = Math.floor(Math.random() * 100);
-  //console.log(randNum);
 
   if (randNum <= 33) {
     return computerSelection = 'rock';
   }
-  else if (33 < randNum <= 66) {
+  else if (33 < randNum && randNum <= 66) {
     return computerSelection = 'paper';
   }
-  else {
+  else if (randNum > 66){
     return computerSelection = 'scissors'
   }
 }
-
-//console.log(computerPlay());
 
 function playJankenRound(playerSelection, computerSelection) {
 
