@@ -85,33 +85,49 @@ function playJankenRound(playerSelection, computerSelection) {
       return 'you tied with the computer (rock to rock)';
     }
     else if (computerSelection.toUpperCase() == "PAPER") {
+      updateScore(computerObj);
       return 'the computer won (rock to paper)';
     }
     else {
+      updateScore(playerObj);
       return 'you won (rock to scissors)';
     }
   }
   else if (playerSelection.toUpperCase() == "PAPER") {
     if (computerSelection.toUpperCase() == "ROCK") {
+      updateScore(playerObj);
       return 'you won (paper to rock)';
     }
     else if (computerSelection.toUpperCase() == "PAPER") {
       return 'you tied with the computer (paper to paper)';
     }
     else {
+      updateScore(computerObj);
       return 'you lost (paper to scissors)';
     }
   }
   else if (playerSelection.toUpperCase() == "SCISSORS") {
       if (computerSelection.toUpperCase() == "ROCK") {
+        updateScore(computerObj);
         return 'you lost (scissors to rock)';
       }
       else if (computerSelection.toUpperCase() == "PAPER") {
+        updateScore(playerObj);
         return 'you won (scissors to paper)';
       }
       else {
         return 'you tied with the computer (scissors to scissors)';
       }
+  }
+}
+
+function updateScore(competitorObject) {
+  competitorObject.score++;
+  if (competitorObject == playerObj) {
+    competitorObject.display.textContent = "player score" + " " + competitorObject.score;
+  }
+  else {
+    competitorObject.display.textContent = "computer score" + " " + competitorObject.score;
   }
 }
 
