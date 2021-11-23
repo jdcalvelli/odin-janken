@@ -129,12 +129,25 @@ function updateScore(competitorObject) {
   else {
     competitorObject.display.textContent = "computer score" + " " + competitorObject.score;
   }
+  checkGameOver();
 }
 
-//console.log(playJankenRound('rock', 'rock'))
-
-function game() {
-    //console.log(playJankenRound(window.prompt('rock, paper, or scissors?'), computerPlay()))
+//write a helper function to check game over, put it in play janken round
+function checkGameOver() {
+  if (playerObj.score == 5) {
+    //display that the player won
+    alert('game over, you won! :)');
+    playerObj.score = 0;
+    playerObj.display.textContent = `player score: ${playerObj.score}`;
+    computerObj.score = 0;
+    computerObj.display.textContent = `computer score: ${computerObj.score}`;
+  }
+  else if (computerObj.score == 5) {
+    //display that the computer won
+    alert('game over, the computer won! :(');
+    playerObj.score = 0;
+    playerObj.display.textContent = `player score: ${playerObj.score}`;
+    computerObj.score = 0;
+    computerObj.display.textContent = `computer score: ${computerObj.score}`;
+  }
 }
-
-game();
