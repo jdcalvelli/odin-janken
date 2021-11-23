@@ -59,9 +59,7 @@ function playJankenRound(playerSelection, computerSelection) {
 //console.log(playJankenRound('rock', 'rock'))
 
 function game() {
-  for (var i = 0; i < 5; i++) {
     console.log(playJankenRound(window.prompt('rock, paper, or scissors?'), computerPlay()))
-  }
 }
 
 game();
