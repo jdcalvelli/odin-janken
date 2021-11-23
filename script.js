@@ -1,23 +1,28 @@
 //external javascript file for odin-janken
 
-//UI
-const body = document.querySelector('body');
-
+//VARS
 let playerObj = {
   score: 0,
   display: document.createElement('p')
 }
-
 let computerObj = {
   score: 0,
   display: document.createElement('p')
 }
 
+const body = document.querySelector('body');
+
 const container = document.createElement('div');
+
 const btnRock = document.createElement('button');
 const btnPaper = document.createElement('button');
 const btnScissors = document.createElement('button');
+
 const resultsDiv = document.createElement('div');
+
+let result = null;
+
+//UI
 
 body.appendChild(container);
 
@@ -37,9 +42,9 @@ container.appendChild(btnScissors);
 btnScissors.textContent = "Scissors";
 
 container.appendChild(resultsDiv);
-resultsDiv.textContent = 'test';
 
-let result = null;
+
+//GAME LOGIC
 
 btnRock.addEventListener('click',
   () => {
@@ -53,16 +58,6 @@ btnScissors.addEventListener('click',
   () => {
     addResult(playJankenRound('scissors', computerPlay()));
   });
-
-
-function addResult(resultString) {
-    result = document.createElement('p');
-    resultsDiv.appendChild(result);
-    result.textContent = resultString;
-    result = null;
-}
-
-//GAME LOGIC
 
 function computerPlay() {
   let randNum = Math.floor(Math.random() * 100);
@@ -119,6 +114,16 @@ function playJankenRound(playerSelection, computerSelection) {
         return 'you tied with the computer (scissors to scissors)';
       }
   }
+}
+
+
+//HELPER FUNCTIONS
+
+function addResult(resultString) {
+    result = document.createElement('p');
+    resultsDiv.appendChild(result);
+    result.textContent = resultString;
+    result = null;
 }
 
 function updateScore(competitorObject) {
