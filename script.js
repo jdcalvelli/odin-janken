@@ -19,9 +19,33 @@ btnRock.textContent = "Rock";
 btnPaper.textContent = "Paper";
 btnScissors.textContent = "Scissors";
 
-btnRock.addEventListener('click', () => console.log(playJankenRound('rock', computerPlay())));
-btnPaper.addEventListener('click', () => console.log(playJankenRound('paper', computerPlay())));
-btnScissors.addEventListener('click', () => console.log(playJankenRound('scissors', computerPlay())));
+resultsDiv.textContent = 'test';
+
+let result = null;
+
+btnRock.addEventListener('click',
+  () => {
+    addResult('testRock');
+    console.log(playJankenRound('rock', computerPlay()));
+  });
+btnPaper.addEventListener('click',
+  () => {
+    addResult('testPaper');
+    console.log(playJankenRound('paper', computerPlay()))
+  });
+btnScissors.addEventListener('click',
+  () => {
+    addResult('testScissors');
+    console.log(playJankenRound('scissors', computerPlay()))
+  });
+
+
+function addResult(resultString) {
+    result = document.createElement('p');
+    resultsDiv.appendChild(result);
+    result.textContent = resultString;
+    result = null;
+}
 
 //GAME LOGIC
 
