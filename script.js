@@ -1,5 +1,25 @@
 //external javascript file for odin-janken
 
+//UI
+const body = document.querySelector('body');
+
+const container = document.createElement('div');
+const btnRock = document.createElement('button');
+const btnPaper = document.createElement('button');
+const btnScissors = document.createElement('button');
+const resultsDiv = document.createElement('div');
+
+body.appendChild(container);
+container.appendChild(btnRock);
+container.appendChild(btnPaper);
+container.appendChild(btnScissors);
+container.appendChild(resultsDiv);
+
+btnRock.textContent = "Rock";
+btnPaper.textContent = "Paper";
+btnScissors.textContent = "Scissors";
+
+//GAME LOGIC
 console.log('test');
 
 function computerPlay() {
