@@ -19,6 +19,10 @@ btnRock.textContent = "Rock";
 btnPaper.textContent = "Paper";
 btnScissors.textContent = "Scissors";
 
+btnRock.addEventListener('click', () => console.log(playJankenRound('rock', computerPlay())));
+btnPaper.addEventListener('click', () => console.log(playJankenRound('paper', computerPlay())));
+btnScissors.addEventListener('click', () => console.log(playJankenRound('scissors', computerPlay())));
+
 //GAME LOGIC
 console.log('test');
 
@@ -79,7 +83,7 @@ function playJankenRound(playerSelection, computerSelection) {
 //console.log(playJankenRound('rock', 'rock'))
 
 function game() {
-    console.log(playJankenRound(window.prompt('rock, paper, or scissors?'), computerPlay()))
+    //console.log(playJankenRound(window.prompt('rock, paper, or scissors?'), computerPlay()))
 }
 
 game();
