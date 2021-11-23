@@ -25,18 +25,15 @@ let result = null;
 
 btnRock.addEventListener('click',
   () => {
-    addResult('testRock');
-    console.log(playJankenRound('rock', computerPlay()));
+    addResult(playJankenRound('rock', computerPlay()));
   });
 btnPaper.addEventListener('click',
   () => {
-    addResult('testPaper');
-    console.log(playJankenRound('paper', computerPlay()))
+    addResult(playJankenRound('paper', computerPlay()));
   });
 btnScissors.addEventListener('click',
   () => {
-    addResult('testScissors');
-    console.log(playJankenRound('scissors', computerPlay()))
+    addResult(playJankenRound('scissors', computerPlay()));
   });
 
 
