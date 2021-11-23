@@ -3,6 +3,16 @@
 //UI
 const body = document.querySelector('body');
 
+let playerObj = {
+  score: 0,
+  display: document.createElement('p')
+}
+
+let computerObj = {
+  score: 0,
+  display: document.createElement('p')
+}
+
 const container = document.createElement('div');
 const btnRock = document.createElement('button');
 const btnPaper = document.createElement('button');
@@ -10,15 +20,23 @@ const btnScissors = document.createElement('button');
 const resultsDiv = document.createElement('div');
 
 body.appendChild(container);
-container.appendChild(btnRock);
-container.appendChild(btnPaper);
-container.appendChild(btnScissors);
-container.appendChild(resultsDiv);
 
+container.appendChild(playerObj.display);
+playerObj.display.textContent = "player score" + " " + playerObj.score;
+
+container.appendChild(computerObj.display);
+computerObj.display.textContent = "computer score" + " " + computerObj.score;
+
+container.appendChild(btnRock);
 btnRock.textContent = "Rock";
+
+container.appendChild(btnPaper);
 btnPaper.textContent = "Paper";
+
+container.appendChild(btnScissors);
 btnScissors.textContent = "Scissors";
 
+container.appendChild(resultsDiv);
 resultsDiv.textContent = 'test';
 
 let result = null;
